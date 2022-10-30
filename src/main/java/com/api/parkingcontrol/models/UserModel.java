@@ -11,13 +11,13 @@ import java.util.UUID;
 @Entity
 @Table(name = "TB_USER")
 public class UserModel implements UserDetails, Serializable {
-    private static final long serialVersion = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID userId;
     @Column(nullable = false, unique = true)
-    private String userName;
+    private String username;
     @Column(nullable = false)
     private String password;
 
@@ -33,7 +33,7 @@ public class UserModel implements UserDetails, Serializable {
 
     @Override
     public String getUsername() {
-        return this.userName;
+        return this.username;
     }
 
     @Override
@@ -65,11 +65,11 @@ public class UserModel implements UserDetails, Serializable {
     }
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String username) {
+        this.username = username;
     }
 
     public void setPassword(String password) {
